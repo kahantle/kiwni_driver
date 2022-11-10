@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:kiwni_driver/onbording/on_bording.dart';
 import 'package:kiwni_driver/screens/auth/mobile_number_screen.dart';
 import 'package:kiwni_driver/screens/auth/otp_screen.dart';
+import 'package:kiwni_driver/screens/auth/welcome_screen.dart';
 import 'package:kiwni_driver/screens/drawer/kiwni_money.dart';
 import 'package:kiwni_driver/screens/drawer/performance.dart';
 import 'package:kiwni_driver/screens/home/home_screen.dart';
@@ -34,7 +35,9 @@ class MyApp extends StatelessWidget {
         '/verifyOtpScreen': (context) => OTPVerification(),
         '/home': (context) => HomeScreen(),
         '/performance': (context) => Performance(),
-        '/kiwniMoney': (context) => const KiwniMoney()
+        '/kiwniMoney': (context) => const KiwniMoney(),
+        '/welcomeScreen':(context)=> WelcomeScreen(),
+
       },
       title: 'Kiwni User App',
       theme: ThemeData(

@@ -1,23 +1,43 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kiwni_driver/screens/tab_fragments/trips1.dart';
 import 'package:kiwni_driver/utils/constants.dart';
 import 'package:kiwni_driver/utils/images_helper.dart';
 import 'package:kiwni_driver/widgets/rounded_button.dart';
 import 'package:kiwni_driver/widgets/text.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../utils/Dimentions.dart';
 import '../../utils/colors_helper.dart';
 
 class TripsFragment extends StatefulWidget {
-  const TripsFragment({Key? key}) : super(key: key);
+TripsFragment({Key? key}) : super(key: key);
 
   @override
   State<TripsFragment> createState() => _TripsFragmentState();
 }
 
 class _TripsFragmentState extends State<TripsFragment> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setDataToPref();
+
+
+  }
+  setDataToPref() async {
+    final prefs = await SharedPreferences.getInstance();
+    if(prefs.getBool('isFirstDialogShown') ==false){
+      Future.delayed(Duration.zero, () => _showDialog(context));
+    }
+
+  }
   @override
   Widget build(BuildContext context) {
+
+
     return Container(
       height: Diamentions.screenHeight,
       width: Diamentions.screenWidth,
@@ -320,5 +340,103 @@ class _TripsFragmentState extends State<TripsFragment> {
         ],
       ),
     );
+  }
+  void _showDialog(BuildContext context) {
+    showDialog(
+        barrierDismissible: false,
+        barrierColor: Color(0xe5eef2f5),
+        context: context,
+        builder: (context) => AlertDialog(
+          contentPadding: EdgeInsets.zero,
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: Diamentions.screenWidth,
+                color: ColorsHelper.shadowColor,
+                child: Padding(
+                  padding: EdgeInsets.all(Diamentions.width30),
+                  child: CustomText(
+                      maxLines: 2,
+                      fontColor: ColorsHelper.primaryColor,
+                      title: Constants.TITLE1,
+                      alignment: TextAlign.left,
+                      fontSize: Diamentions.font18),
+                ),
+              ),
+              Container(
+                width: Diamentions.screenWidth,
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: list.length,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: Diamentions.screenWidth,
+                              child: Row(
+                                crossAxisAlignment:
+                                CrossAxisAlignment.start,
+                                children: [
+                                  Icon(
+                                    Icons.circle,
+                                    color: ColorsHelper.primaryColor,
+                                    size: Diamentions.width10,
+                                  ),
+                                  SizedBox(
+                                    width: Diamentions.width20,
+                                  ),
+                                  Positioned(
+                                    left: Diamentions.width30,
+                                    child: CustomText(
+                                      alignment: TextAlign.left,
+                                      title: list[index],
+                                      maxLines: 2,
+                                      fontSize: Diamentions.font16,
+                                      fontColor: ColorsHelper.blackColor,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    }),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Container(
+                  width: Diamentions.width90,
+                  height: Diamentions.width30,
+                  child: RoundedButton(
+                    elevation: 0,
+                    backgroundColor: ColorsHelper.whiteColor,
+                    fontColor: ColorsHelper.primaryColor,
+                    title: Constants.DISMISS,
+                    fontSize: Diamentions.font14,
+                    borderColor: ColorsHelper.whiteColor,
+                    borderRadius: 0,
+                    onTap: () {
+                      Navigator.of(context, rootNavigator: true).pop();
+                    },
+                  ),
+                ),
+              )
+            ],
+          ),
+        ));
+    setFirstDialogShown();
+
+  }
+
+  setFirstDialogShown()async{
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool("isFirstDialogShown", true);
   }
 }

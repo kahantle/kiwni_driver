@@ -108,4 +108,5 @@ class Constants {
   static const String TOTAL_EARN = 'Total Earn `';
   static const String REFER_FRIEND = 'Refer Friend!';
   static const String REFER_STRING = 'You\'ll get 10 %  extra\npayment on ride';
+  static const String IS_INITIAL_DIALOG_CALLED = "isInitialDialogCalled";
 }

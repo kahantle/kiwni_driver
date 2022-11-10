@@ -21,4 +21,5 @@ class ImagesHelper {
   static const String IMG_RIDE = 'assets/images/img_ride.png';
   static const String IMG_PICKUP = 'assets/images/img_pickup.png';
   static const String IMG_DROP = 'assets/images/img_drop.png';
+  static const String IMG_CIRCLE = 'assets/images/img_circle.png';
 }

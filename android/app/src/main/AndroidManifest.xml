@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kiwni_driver">
+    package="com.dotpitchtechnologies.kiwniDriver">
    <application
-        android:label="kiwni_driver"
+        android:label="kiwniDriver"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
        <meta-data android:name="com.google.android.geo.API_KEY"
