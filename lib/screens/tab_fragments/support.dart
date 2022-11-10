@@ -23,175 +23,169 @@ class _SupportFragmentState extends State<SupportFragment> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: Diamentions.screenWidth,
-                height: Diamentions.width100,
-                child: Padding(
-                  padding: EdgeInsets.all(Diamentions.width20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              RoundedButton(
-                                fontSize: Diamentions.font14,
-                                onTap: () {},
-                                title: Constants.APP_NOT_WORKING,
-                                fontColor: ColorsHelper.blackColor,
-                                backgroundColor:
-                                    ColorsHelper.primaryBackgroundColor,
-                                borderColor:
-                                    ColorsHelper.primaryBackgroundColor,
-                                borderRadius: 2,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: Diamentions.screenWidth,
+              height: Diamentions.width100,
+              child: Padding(
+                padding: EdgeInsets.all(Diamentions.width20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          children: [
+                            RoundedButton(
+                              fontSize: Diamentions.font14,
+                              onTap: () {},
+                              title: Constants.APP_NOT_WORKING,
+                              fontColor: ColorsHelper.blackColor,
+                              backgroundColor:
+                                  ColorsHelper.primaryBackgroundColor,
+                              borderColor: ColorsHelper.primaryBackgroundColor,
+                              borderRadius: 2,
+                            ),
+                            Positioned(
+                              right: 0,
+                              top: 0,
+                              bottom: 0,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: Diamentions.width20,
+                                color: ColorsHelper.blackColor,
                               ),
-                              Positioned(
-                                right: 0,
-                                top: 0,
-                                bottom: 0,
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: Diamentions.width20,
-                                  color: ColorsHelper.blackColor,
-                                ),
-                              )
-                            ],
-                          ),
+                            )
+                          ],
                         ),
                       ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            child: Stack(
-                              children: [
-                                RoundedButton(
-                                  fontSize: Diamentions.font14,
-                                  onTap: () {},
-                                  title: Constants.STATUS_OF_MY_CITY,
-                                  fontColor: ColorsHelper.blackColor,
-                                  backgroundColor:
-                                      ColorsHelper.primaryBackgroundColor,
-                                  borderColor:
-                                      ColorsHelper.primaryBackgroundColor,
-                                  borderRadius: 2,
-                                ),
-                                Positioned(
-                                  top: 0,
-                                  bottom: 0,
-                                  right: 0,
-                                  child: Icon(
-                                    Icons.arrow_forward_ios,
-                                    size: Diamentions.width20,
-                                    color: ColorsHelper.blackColor,
-                                  ),
-                                )
-                              ],
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          children: [
+                            RoundedButton(
+                              fontSize: Diamentions.font14,
+                              onTap: () {},
+                              title: Constants.STATUS_OF_MY_CITY,
+                              fontColor: ColorsHelper.blackColor,
+                              backgroundColor:
+                                  ColorsHelper.primaryBackgroundColor,
+                              borderColor: ColorsHelper.primaryBackgroundColor,
+                              borderRadius: 2,
                             ),
-                          ),
+                            Positioned(
+                              top: 0,
+                              bottom: 0,
+                              right: 0,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: Diamentions.width20,
+                                color: ColorsHelper.blackColor,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.center,
+                child: Container(
+                  color: Colors.red,
+                  width: Diamentions.width200,
+                  height: Diamentions.width50,
+                  child: Stack(
+                    children: [
+                      RoundedButton(
+                        fontSize: Diamentions.font14,
+                        onTap: () {},
+                        title: Constants.SAFTEY,
+                        fontColor: ColorsHelper.blackColor,
+                        backgroundColor: ColorsHelper.primaryBackgroundColor,
+                        borderColor: ColorsHelper.primaryBackgroundColor,
+                        borderRadius: 2,
+                      ),
+                      Positioned(
+                        top: 0,
+                        bottom: 0,
+                        right: 0,
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          size: Diamentions.width20,
+                          color: ColorsHelper.blackColor,
                         ),
                       )
                     ],
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Container(
-                    color: Colors.red,
-                    width: Diamentions.width200,
-                    height: Diamentions.width50,
-                    child: Stack(
+            ),
+            SizedBox(
+              height: Diamentions.width30,
+            ),
+          ],
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: Diamentions.width20),
+          child: CustomText(
+            title: Constants.OTHER_HELP_TOPICS,
+            fontSize: Diamentions.font18,
+            fontColor: ColorsHelper.blackColor,
+            fontWeight: FontWeight.bold,
+            fontFamily: Constants.FONT_FAMILY_BOLD,
+          ),
+        ),
+        SizedBox(
+          width: Diamentions.screenWidth,
+          child: Padding(
+            padding: EdgeInsets.only(
+                top: Diamentions.width10,
+                left: Diamentions.width10,
+                right: Diamentions.width10),
+            child: ListView.builder(
+                padding: const EdgeInsets.only(top: 0),
+                itemCount: list.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: Diamentions.width10,
+                        vertical: Diamentions.width10),
+                    child: Row(
                       children: [
-                        RoundedButton(
-                          fontSize: Diamentions.font14,
-                          onTap: () {},
-                          title: Constants.SAFTEY,
-                          fontColor: ColorsHelper.blackColor,
-                          backgroundColor: ColorsHelper.primaryBackgroundColor,
-                          borderColor: ColorsHelper.primaryBackgroundColor,
-                          borderRadius: 2,
+                        Icon(
+                          Icons.circle,
+                          size: Diamentions.width10,
+                          color: Colors.black,
                         ),
-                        Positioned(
-                          top: 0,
-                          bottom: 0,
-                          right: 0,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            size: Diamentions.width20,
-                            color: ColorsHelper.blackColor,
-                          ),
+                        SizedBox(
+                          width: Diamentions.width10,
+                        ),
+                        CustomText(
+                          title: list[index],
+                          fontSize: Diamentions.font16,
+                          fontColor: ColorsHelper.blackColor,
                         )
                       ],
                     ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: Diamentions.width30,
-              ),
-            ],
+                  );
+                }),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: Diamentions.width20),
-            child: CustomText(
-              title: Constants.OTHER_HELP_TOPICS,
-              fontSize: Diamentions.font18,
-              fontColor: ColorsHelper.blackColor,
-              fontWeight: FontWeight.bold,
-              fontFamily: Constants.FONT_FAMILY_BOLD,
-            ),
-          ),
-          Container(
-            width: Diamentions.screenWidth,
-            child: Padding(
-              padding: EdgeInsets.only(
-                  top: Diamentions.width10,
-                  left: Diamentions.width10,
-                  right: Diamentions.width10),
-              child: ListView.builder(
-                  padding: const EdgeInsets.only(top: 0),
-                  itemCount: list.length,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: Diamentions.width10,
-                          vertical: Diamentions.width10),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.circle,
-                            size: Diamentions.width10,
-                            color: Colors.black,
-                          ),
-                          SizedBox(
-                            width: Diamentions.width10,
-                          ),
-                          CustomText(
-                            title: list[index],
-                            fontSize: Diamentions.font16,
-                            fontColor: ColorsHelper.blackColor,
-                          )
-                        ],
-                      ),
-                    );
-                  }),
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }

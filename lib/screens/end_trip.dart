@@ -18,11 +18,11 @@ class EndTrip extends StatefulWidget {
 }
 
 class _EndTripState extends State<EndTrip> {
-  CameraPosition cameraPosition = CameraPosition(
+  CameraPosition cameraPosition = const CameraPosition(
     target: LatLng(22.308155, 70.800705),
     zoom: 14.4746,
   );
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
   bool? value2;
   @override
   void initState() {
@@ -43,7 +43,7 @@ class _EndTripState extends State<EndTrip> {
               // thumb colors
               activeColor: Colors.green.withOpacity(0.4),
               inactiveThumbColor: Colors.red.withOpacity(0.4),
-              activeThumbImage: AssetImage(
+              activeThumbImage: const AssetImage(
                 ImagesHelper.IMG_CAB,
               ),
               inactiveThumbImage: AssetImage(ImagesHelper.IMG_CAB),
@@ -143,7 +143,7 @@ class _EndTripState extends State<EndTrip> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Image(
-                                        image: AssetImage(
+                                        image: const AssetImage(
                                             ImagesHelper.IMG_CAB_BLUE),
                                         width: Diamentions.width30,
                                         height: Diamentions.width30,
@@ -154,7 +154,7 @@ class _EndTripState extends State<EndTrip> {
                                       // ),
                                       Center(
                                         child: CustomText(
-                                            title: "Drop",
+                                            title: Constants.DROP_POINT,
                                             fontWeight: FontWeight.bold,
                                             fontColor: ColorsHelper.blackColor,
                                             fontSize: Diamentions.font14),
@@ -186,7 +186,7 @@ class _EndTripState extends State<EndTrip> {
                         ),
                       ),
                     ),
-                    Divider(
+                    const Divider(
                       height: 2,
                       color: ColorsHelper.blackColor,
                     ),
@@ -226,7 +226,7 @@ class _EndTripState extends State<EndTrip> {
                                       spreadRadius: 2.0,
                                     )
                                   ], borderRadius: BorderRadius.circular(14)),
-                                  child: CircleAvatar(
+                                  child: const CircleAvatar(
                                     backgroundColor: ColorsHelper.whiteColor,
                                     radius: 20,
                                     child: Text(Constants.SOS),
@@ -239,7 +239,7 @@ class _EndTripState extends State<EndTrip> {
                                         blurRadius: 10.0,
                                         spreadRadius: 2.0)
                                   ]),
-                                  child: CircleAvatar(
+                                  child: const CircleAvatar(
                                     backgroundColor: ColorsHelper.whiteColor,
                                     radius: 20,
                                     child: Text(Constants.HELP),
@@ -321,7 +321,7 @@ class _EndTripState extends State<EndTrip> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image(
-                      image: AssetImage(ImagesHelper.IC_CASH),
+                      image: const AssetImage(ImagesHelper.IC_CASH),
                       width: Diamentions.width40,
                       height: Diamentions.width40,
                     ),

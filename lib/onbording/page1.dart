@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kiwni_driver/utils/Dimentions.dart';
 import 'package:kiwni_driver/utils/colors_helper.dart';
+import 'package:kiwni_driver/utils/constants.dart';
 import 'package:kiwni_driver/utils/images_helper.dart';
 
 import '../widgets/text.dart';
@@ -22,12 +23,12 @@ class _Page1State extends State<Page1> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Image(image: AssetImage(ImagesHelper.IMG_RIDE)),
+          const Image(image: AssetImage(ImagesHelper.IMG_RIDE)),
           SizedBox(
             height: Diamentions.width20,
           ),
           CustomText(
-            title: "Ride",
+            title: Constants.RIDE,
             fontSize: Diamentions.font18,
             fontColor: ColorsHelper.blackColor,
           ),

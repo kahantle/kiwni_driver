@@ -13,11 +13,9 @@ class OnBoarding extends StatefulWidget {
 }
 
 class _OnBoardingState extends State<OnBoarding> {
-  final PageController _pageViewController =
-      PageController(initialPage: 0); // set the initial page you want to show
-  int _activePage = 0; // will hold current active page index value
-  //Create a List Holding all the Pages
-  final List<Widget> _Pages = [Page1(), Page2(), Page3()];
+  final PageController _pageViewController = PageController(initialPage: 0);
+  int _activePage = 0;
+  final List<Widget> _Pages = [const Page1(), const Page2(), const Page3()];
   @override
   void dispose() {
     // TODO: implement dispose
@@ -28,8 +26,7 @@ class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // will make use of Stack Widget, so that One Widget can we placed on top
-      body: Container(
+      body: SizedBox(
         width: Diamentions.screenWidth,
         height: Diamentions.screenHeight,
         child: Column(
@@ -37,7 +34,7 @@ class _OnBoardingState extends State<OnBoarding> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     width: Diamentions.screenWidth,
                     height: Diamentions.screenHeight - 50,
                     child: PageView.builder(
@@ -56,7 +53,7 @@ class _OnBoardingState extends State<OnBoarding> {
               ),
             ),
             //creating dots at bottom
-            Container(
+            SizedBox(
               height: 50,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

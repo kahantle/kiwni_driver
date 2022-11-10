@@ -31,11 +31,6 @@ class RoundedButton extends StatelessWidget {
     this.elevation = 2,
     this.suffixIcon = Icons.arrow_forward_ios_outlined,
   }) : super(key: key);
-  // bo: BoxDecoration(
-  // color: backgroundColor,
-  // borderRadius: BorderRadius.circular(borderRadius),
-  // border: Border.all(color: borderColor, width: 1),
-  // ),
 
   @override
   Widget build(BuildContext context) {

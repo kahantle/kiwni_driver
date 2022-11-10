@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kiwni_driver/utils/Dimentions.dart';
+import 'package:kiwni_driver/utils/constants.dart';
 import 'package:kiwni_driver/widgets/text.dart';
 
 import '../utils/colors_helper.dart';
@@ -22,12 +23,12 @@ class _Page2State extends State<Page2> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Image(image: AssetImage(ImagesHelper.IMG_PICKUP)),
+          const Image(image: AssetImage(ImagesHelper.IMG_PICKUP)),
           SizedBox(
             height: Diamentions.width20,
           ),
           CustomText(
-            title: "Pickup Point",
+            title: Constants.PICKUP_POINT,
             fontSize: Diamentions.font18,
             fontColor: ColorsHelper.blackColor,
           ),
@@ -36,22 +37,6 @@ class _Page2State extends State<Page2> {
           ),
         ],
       ),
-    );
-
-    Container(
-      child: Center(
-        child: Column(
-          children: [
-            Center(child: Image(image: AssetImage(ImagesHelper.IMG_PICKUP))),
-            SizedBox(
-              height: Diamentions.width20,
-            ),
-            CustomText(title: "Pickup Point", fontSize: Diamentions.font18),
-          ],
-        ),
-      ),
-      width: Diamentions.screenWidth,
-      height: Diamentions.screenHeight,
     );
   }
 }

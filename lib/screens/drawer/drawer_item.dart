@@ -42,6 +42,9 @@ class _DrawerItemState extends State<DrawerItem> {
     return Scaffold(
       body: Column(children: <Widget>[
         DrawerHeader(
+          decoration: const BoxDecoration(
+            color: ColorsHelper.primaryBackgroundColor,
+          ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -61,7 +64,7 @@ class _DrawerItemState extends State<DrawerItem> {
                   child: Icon(
                     Icons.person,
                     size: Diamentions.width50,
-                    color: Color(0xffb8c6ff),
+                    color: const Color(0xffb8c6ff),
                   ),
                 ),
               ),
@@ -95,12 +98,9 @@ class _DrawerItemState extends State<DrawerItem> {
               )
             ],
           ),
-          decoration: BoxDecoration(
-            color: ColorsHelper.primaryBackgroundColor,
-          ),
         ),
         Expanded(
-          child: Container(
+          child: SizedBox(
             height: Diamentions.screenHeight,
             child: ListView.builder(
                 itemCount: drawerItems.length,
@@ -117,7 +117,6 @@ class _DrawerItemState extends State<DrawerItem> {
                           setState(() {
                             selectedDrawerIndex = index;
                             _getDrawerItemWidget(index);
-
                             print("drawwer");
                           });
                         },

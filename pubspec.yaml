@@ -48,6 +48,8 @@ dependencies:
   flutter_polyline_points: ^1.0.0
   toggle_switch: ^2.0.1
   custom_rating_bar: ^2.0.4
+  shared_preferences: ^2.0.15
+  provider: ^6.0.3
 
 dev_dependencies:
   flutter_test:

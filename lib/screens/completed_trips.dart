@@ -13,6 +13,12 @@ class CompletedTrips extends StatefulWidget {
 
 class _CompletedTripsState extends State<CompletedTrips> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,

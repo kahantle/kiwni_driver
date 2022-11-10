@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kiwni_driver/screens/tab_fragments/trips1.dart';
 import 'package:kiwni_driver/utils/constants.dart';
 import 'package:kiwni_driver/utils/images_helper.dart';
 import 'package:kiwni_driver/widgets/rounded_button.dart';
@@ -9,7 +10,7 @@ import '../../utils/Dimentions.dart';
 import '../../utils/colors_helper.dart';
 
 class TripsFragment extends StatefulWidget {
-  const TripsFragment({Key? key}) : super(key: key);
+  TripsFragment({Key? key}) : super(key: key);
 
   @override
   State<TripsFragment> createState() => _TripsFragmentState();
@@ -17,8 +18,14 @@ class TripsFragment extends StatefulWidget {
 
 class _TripsFragmentState extends State<TripsFragment> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: Diamentions.screenHeight,
       width: Diamentions.screenWidth,
       child: Column(
@@ -31,17 +38,12 @@ class _TripsFragmentState extends State<TripsFragment> {
             child: Row(
               children: [
                 Image(
-                  image: AssetImage(
+                  image: const AssetImage(
                     ImagesHelper.IMG_CAB_BLUE,
                   ),
                   width: Diamentions.width20,
                   height: Diamentions.width20,
                 ),
-                // Icon(
-                //   Icons.car_rental_rounded,
-                //   size: Diamentions.width30,
-                //   color: ColorsHelper.primaryColor,
-                // ),
                 SizedBox(
                   width: Diamentions.width20,
                 ),
@@ -57,7 +59,7 @@ class _TripsFragmentState extends State<TripsFragment> {
           SizedBox(
             height: Diamentions.width20,
           ),
-          Divider(
+          const Divider(
             height: 2,
             color: ColorsHelper.blackColor,
           ),
@@ -67,7 +69,7 @@ class _TripsFragmentState extends State<TripsFragment> {
                 itemCount: 5,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4.0),
@@ -139,7 +141,7 @@ class _TripsFragmentState extends State<TripsFragment> {
                                     height: Diamentions.width20,
                                   ),
                                   CustomText(
-                                    title: "One Way",
+                                    title: Constants.ONE_WAY,
                                     fontSize: Diamentions.font16,
                                     fontColor: ColorsHelper.blackColor,
                                     fontFamily: Constants.FONT_FAMILY_BOLD,
@@ -150,7 +152,7 @@ class _TripsFragmentState extends State<TripsFragment> {
                                   Stack(
                                     children: [
                                       CustomText(
-                                        title: "Pickup Distance",
+                                        title: Constants.PICKUP_DISTANCE,
                                         fontSize: Diamentions.font16,
                                         fontColor: ColorsHelper.blackColor,
                                         fontFamily: Constants.FONT_FAMILY_BOLD,
@@ -161,7 +163,7 @@ class _TripsFragmentState extends State<TripsFragment> {
                                         child: Align(
                                           alignment: Alignment.centerRight,
                                           child: CustomText(
-                                            title: "Trip km",
+                                            title: Constants.TRIP_KM,
                                             fontSize: Diamentions.font16,
                                             fontColor: ColorsHelper.blackColor,
                                             fontFamily:
@@ -204,7 +206,7 @@ class _TripsFragmentState extends State<TripsFragment> {
                                     height: Diamentions.width20,
                                   ),
                                   CustomText(
-                                    title: "Pickup Date & Time",
+                                    title: Constants.PICKUP_TIME,
                                     fontSize: Diamentions.font16,
                                     fontColor: ColorsHelper.blackColor,
                                     fontFamily: Constants.FONT_FAMILY_BOLD,
@@ -235,6 +237,12 @@ class _TripsFragmentState extends State<TripsFragment> {
                                       Container(
                                         width: 40.0,
                                         height: 40.0,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                              width: 1,
+                                              color: ColorsHelper.primaryColor),
+                                        ),
                                         child: Column(
                                           children: [
                                             CustomText(
@@ -252,12 +260,6 @@ class _TripsFragmentState extends State<TripsFragment> {
                                               fontWeight: FontWeight.bold,
                                             ),
                                           ],
-                                        ),
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              width: 1,
-                                              color: ColorsHelper.primaryColor),
                                         ),
                                       ),
                                     ],
@@ -320,5 +322,97 @@ class _TripsFragmentState extends State<TripsFragment> {
         ],
       ),
     );
+  }
+
+  void _showDialog(BuildContext context) {
+    showDialog(
+        barrierDismissible: false,
+        barrierColor: Color(0xe5eef2f5),
+        context: context,
+        builder: (context) => AlertDialog(
+              contentPadding: EdgeInsets.zero,
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: Diamentions.screenWidth,
+                    color: ColorsHelper.shadowColor,
+                    child: Padding(
+                      padding: EdgeInsets.all(Diamentions.width30),
+                      child: CustomText(
+                          maxLines: 2,
+                          fontColor: ColorsHelper.primaryColor,
+                          title: Constants.TITLE1,
+                          alignment: TextAlign.left,
+                          fontSize: Diamentions.font18),
+                    ),
+                  ),
+                  SizedBox(
+                    width: Diamentions.screenWidth,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: list.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SizedBox(
+                                  width: Diamentions.screenWidth,
+                                  child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Icon(
+                                        Icons.circle,
+                                        color: ColorsHelper.primaryColor,
+                                        size: Diamentions.width10,
+                                      ),
+                                      SizedBox(
+                                        width: Diamentions.width20,
+                                      ),
+                                      Positioned(
+                                        left: Diamentions.width30,
+                                        child: CustomText(
+                                          alignment: TextAlign.left,
+                                          title: list[index],
+                                          maxLines: 2,
+                                          fontSize: Diamentions.font16,
+                                          fontColor: ColorsHelper.blackColor,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        }),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      width: Diamentions.width90,
+                      height: Diamentions.width30,
+                      child: RoundedButton(
+                        elevation: 0,
+                        backgroundColor: ColorsHelper.whiteColor,
+                        fontColor: ColorsHelper.primaryColor,
+                        title: Constants.DISMISS,
+                        fontSize: Diamentions.font14,
+                        borderColor: ColorsHelper.whiteColor,
+                        borderRadius: 0,
+                        onTap: () {
+                          Navigator.of(context, rootNavigator: true).pop();
+                        },
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ));
   }
 }

@@ -108,4 +108,16 @@ class Constants {
   static const String TOTAL_EARN = 'Total Earn `';
   static const String REFER_FRIEND = 'Refer Friend!';
   static const String REFER_STRING = 'You\'ll get 10 %  extra\npayment on ride';
+  static const String IS_INITIAL_DIALOG_CALLED = "isInitialDialogCalled";
+  static const String RIDE = "Ride";
+  static const String PICKUP_POINT = "Pickup Point";
+  static const String DROP_POINT = "Drop Point";
+  static const String YOUR_REFERAL = "Your  referral Code";
+  static const String DUMMY_CODE = "BE3KIWNI";
+  static const String ONE_WAY = "One Way";
+  static const String TRIP_KM = "Trip km";
+  static const String PICKUP_DISTANCE = "Pickup Distance";
+  static const String PICKUP_TIME = "Pickup Date & Time";
+  static const String LOADING = "Loading....";
+  static const String DROP = "DROP";
 }
